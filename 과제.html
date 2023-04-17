@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>gallery</title>
+    <style>
+    #largeImg{
+        margin-left: 607px;
+    }
+    #thumbs {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }   
+
+    #thumbs li {
+        margin: 0 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <p><img id="largeImg" src="img/뉴진스.jpg" alt="large image"></p>
+    <ul id = "thumbs">
+        <li>
+            <a href="img/해린.jpg" title="Image 1"><img src="img/해린.jpg"></a>
+        </li>
+        <li>
+            <a href="img/다니엘.jpg" title="Image 2"><img src="img/다니엘.jpg"></a>
+        </li>
+        <li>
+            <a href="img/민지.jpg" title="Image 3"><img src="img/민지.jpg"></a>
+        </li>
+        <li>
+            <a href="img/하니.jpg" title="Image 4"><img src="img/하니.jpg"></a>
+        </li>
+        <li>
+            <a href="img/혜인.jpg" title="Image 4"><img src="img/혜인.jpg"></a>
+        </li>
+    </ul>
+
+<script>
+    thumbs.onclick = function(event) {
+      let thumbnail = event.target.closest('a');
+
+      if (!thumbnail) return;
+      showThumbnail(thumbnail.href, thumbnail.title);
+      event.preventDefault();
+    }
+
+    function showThumbnail(href, title) {
+      largeImg.src = href;
+      largeImg.alt = title;
+    }
+</script>
+
+</body>
+</html>
